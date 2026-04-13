@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registrazione - Serie A Center</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="shell" style="max-width: 620px; margin-top: 40px;">
+    <section class="card pad">
+      <h2>Registrazione utente</h2>
+      <form id="register-form" class="controls" style="flex-direction: column; align-items: stretch;">
+        <label for="nome">Nome</label>
+        <input id="nome" name="nome" required />
+
+        <label for="cognome">Cognome</label>
+        <input id="cognome" name="cognome" required />
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required />
+
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" required />
+        <label for="toggle-password">
+          <input id="toggle-password" type="checkbox" />
+          Mostra password
+        </label>
+
+        <label for="squadraPreferita">Squadra preferita</label>
+        <select id="squadraPreferita" name="squadraPreferita" required></select>
+
+        <button class="btn btn-main" type="submit">Registrati</button>
+      </form>
+      <p id="status" class="status"></p>
+      <a class="btn btn-ghost" href="login.html">Torna al login</a>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="app.js"></script>
+  <script src="register.js"></script>
+</body>
+</html>

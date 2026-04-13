@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Partite per stadio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="navbar-slot"></div>
+  <main class="shell">
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>Partite per stadio</h1>
+      </div>
+    </section>
+    <section class="card pad">
+      <div class="controls">
+        <label for="stadio">Stadio</label>
+        <select id="stadio"></select>
+        <label for="anno">Anno</label>
+        <input id="anno" type="number" min="2000" max="2100" value="2025" />
+        <button id="prev" class="btn btn-ghost">Precedente</button>
+        <button id="next" class="btn btn-ghost">Successiva</button>
+        <button id="show" class="btn btn-main">Mostra</button>
+      </div>
+      <p id="status" class="status"></p>
+    </section>
+    <section class="card pad stadium-info">
+      <img id="stadio-image" src="stadi/olimpico.jpg" alt="Immagine stadio" />
+      <div>
+        <h3 id="stadio-name">-</h3>
+        <p class="muted">Coordinate: <span id="stadio-coords">-</span></p>
+        <p class="muted">Capienza: <span id="stadio-capienza">-</span></p>
+      </div>
+    </section>
+    <section class="card">
+      <table>
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Casa</th>
+            <th>Trasferta</th>
+            <th class="center">Risultato</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="app.js"></script>
+  <script src="partite_stadio.js"></script>
+</body>
+</html>

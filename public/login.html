@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Serie A Center</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      background:
+        linear-gradient(135deg, rgba(13, 21, 37, 0.7), rgba(17, 24, 38, 0.45)),
+        url("logos/sfondo.jpg") center / cover fixed;
+    }
+
+    .login-shell {
+      max-width: 520px;
+      margin-top: 40px;
+    }
+
+    .login-form {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  </style>
+</head>
+<body>
+  <main class="shell login-shell">
+    <section class="card pad">
+      <h2>Login</h2>
+      <form id="login-form" class="controls login-form">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required />
+
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" required />
+        <label for="toggle-password">
+          <input id="toggle-password" type="checkbox" />
+          Mostra password
+        </label>
+
+        <button class="btn btn-main" type="submit">Accedi</button>
+      </form>
+      <p id="status" class="status"></p>
+      <a class="btn btn-ghost" href="register.html">Registrati</a>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="app.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>

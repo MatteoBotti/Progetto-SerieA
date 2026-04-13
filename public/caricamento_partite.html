@@ -1,0 +1,41 @@
+
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Caricamento partite</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Caricamento partite (Serie A)</h1>
+    <p class="muted">
+      Recupera le partite via football-data.org e fa upsert in tabella <b>PARTITE</b>.
+    </p>
+
+    <section class="card">
+      <label>Parametri</label>
+
+      <div class="row" style="margin-bottom: 10px;">
+        <input id="teamId" type="number" value="7397" min="1" />
+        <input id="seasonApi" type="number" value="2025" min="1900" />
+      </div>
+
+      <div class="row">
+        <input id="stagione" type="text" value="2025/2026" />
+        <button id="btnCarica">Carica partite</button>
+      </div>
+
+      <div id="status" class="status"></div>
+    </section>
+
+    <section class="card">
+      <h2>Risultato</h2>
+      <pre id="output" class="output">{}</pre>
+    </section>
+  </main>
+
+  <script src="caricamento_partite.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Area utente - Serie A Center</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="navbar-slot"></div>
+
+  <main class="shell page-stack">
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>Area utente</h1>
+      </div>
+    </section>
+
+    <section class="grid cols-2 profile-layout">
+      <article class="card profile-card profile-main-card">
+        <h2>I tuoi dati</h2>
+        <div id="user-area-status" class="status">Caricamento area utente...</div>
+        <dl id="user-profile-details" class="user-data-list">
+          <div><dt>Nome</dt><dd>-</dd></div>
+          <div><dt>Cognome</dt><dd>-</dd></div>
+          <div><dt>Email</dt><dd>-</dd></div>
+          <div><dt>Ruolo</dt><dd>-</dd></div>
+        </dl>
+      </article>
+
+      <article class="card profile-card profile-main-card favorite-team-page">
+        <h2>Squadra preferita</h2>
+        <div id="favorite-team-panel" class="favorite-team-card">
+          <p class="muted">Caricamento in corso...</p>
+        </div>
+      </article>
+
+      <article class="card profile-card">
+        <form id="user-email-form" class="user-form">
+          <h4>Cambia email</h4>
+          <label for="user-current-email">Email attuale</label>
+          <input id="user-current-email" name="currentEmail" type="email" required />
+          <label for="user-email-input">Nuova email</label>
+          <input id="user-email-input" name="newEmail" type="email" required />
+          <button class="btn btn-main" type="submit">Aggiorna email</button>
+        </form>
+      </article>
+
+      <article class="card profile-card">
+        <form id="user-password-form" class="user-form">
+          <h4>Cambia password</h4>
+          <label for="user-current-password">Password attuale</label>
+          <input id="user-current-password" name="currentPassword" type="password" required />
+          <label for="user-new-password">Nuova password</label>
+          <input id="user-new-password" name="newPassword" type="password" required />
+          <button class="btn btn-main" type="submit">Aggiorna password</button>
+        </form>
+      </article>
+    </section>
+  </main>
+
+  <div class="footer">© 2026 Serie A Center</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="app.js"></script>
+  <script src="area_utente.js"></script>
+</body>
+</html>

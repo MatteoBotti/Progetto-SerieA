@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Import Giocatori</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="navbar-slot"></div>
+  <main class="shell">
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>Import giocatori</h1>
+      </div>
+    </section>
+    <section class="card pad">
+      <div class="controls">
+        <label for="teamId">Team ID</label>
+        <select id="teamId"></select>
+        <button id="run" class="btn btn-main">Avvia import</button>
+      </div>
+      <p id="status" class="status"></p>
+      <pre id="output" class="card pad" style="overflow:auto"></pre>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="app.js"></script>
+  <script src="api_giocatori.js"></script>
+</body>
+</html>

@@ -1,0 +1,582 @@
+html {
+  min-height: 100%;
+}
+
+:root {
+  --fc-green: #0f3ed7;
+  --fc-green-dark: #000ba3;
+  --fc-ink: #111826;
+  --fc-muted: #5f6878;
+  --fc-border: #d8dce4;
+  --fc-bg: #f5f7fb;
+  --fc-card: #ffffff;
+  --fc-danger: #e02d2d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Aptos", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.45;
+  color: var(--fc-ink);
+  background:
+        url("logos/sfondopagine.jpg") center / cover fixed;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.shell {
+  width: min(1200px, 94vw);
+  margin: 0 auto;
+}
+
+.topbar {
+  position: relative;
+  z-index: 20;
+  background: #0d1525;
+  color: #fff;
+  border-bottom: 3px solid var(--fc-green);
+}
+
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 0;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  font-size: 19px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.brand img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.menu-toggle {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #2a3650;
+  border-radius: 59px;
+  background: #17253f;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: #fff;
+}
+
+.topbar-spacer {
+  width: 42px;
+  height: 42px;
+}
+
+.menu-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  width: min(320px, 82vw);
+  height: 100vh;
+  padding: 72px 14px 14px;
+  border-right: 1px solid #22324d;
+  background: #101a2d;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+  overflow-y: auto;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0;
+}
+
+.menu a {
+  font-size: 15px;
+  padding: 9px 12px;
+  border-radius: 0;
+  color: #d7e1f0;
+  transition: all 0.2s ease;
+}
+
+.menu a:hover,
+.menu a.active {
+  color: #fff;
+  background: #19263d;
+}
+
+.menu-user {
+  margin-top: 6px;
+  padding: 9px 12px;
+  border-top: 1px solid #2b3a56;
+  font-size: 13px;
+}
+
+.user-form {
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid #2b3a56;
+  border-radius: 0;
+  background: #131f35;
+}
+
+.user-form h4 {
+  margin: 0;
+  color: #fff;
+  font-size: 15px;
+}
+
+.user-form label {
+  color: #d7e1f0;
+  font-size: 13px;
+}
+
+.user-form input {
+  background: #f8fbff;
+}
+
+.user-form .btn {
+  margin-top: 2px;
+}
+
+.user-data-list {
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.user-data-list div {
+  display: grid;
+  gap: 2px;
+}
+
+.user-data-list dt {
+  color: #8fa2c3;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.user-data-list dd {
+  margin: 0;
+  color: #fff;
+  font-size: 14px;
+}
+
+.user-data-list.compact dd {
+  font-size: 13px;
+}
+
+.favorite-team-card {
+  display: grid;
+  gap: 10px;
+  flex: 1;
+  align-content: start;
+}
+
+.favorite-team-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.favorite-team-head img {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 0;
+  padding: 4px;
+}
+
+#user-area-status {
+  margin-top: 0;
+  color: #d9f6db;
+}
+
+#user-area-status.error {
+  color: #ffb4b4;
+}
+
+.page-stack {
+  display: grid;
+  gap: 18px;
+  width: min(100%, 1200px);
+  margin: 18px auto 28px;
+  flex: 1;
+  align-content: start;
+}
+
+.profile-layout {
+  align-items: stretch;
+  min-height: clamp(560px, calc(100vh - 280px), 980px);
+}
+
+.profile-layout > .profile-card {
+  min-height: 100%;
+}
+
+.profile-card {
+  padding: 18px;
+  height: 100%;
+}
+
+.profile-card h2 {
+  font-size: 20px;
+}
+
+.favorite-team-page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-main-card {
+  min-height: 320px;
+}
+
+.profile-card .user-form {
+  background: #f8fbff;
+  border: 1px solid var(--fc-border);
+}
+
+.profile-card .user-form h4 {
+  color: var(--fc-ink);
+}
+
+.profile-card .user-form label {
+  color: #42516b;
+}
+
+.profile-layout .btn {
+  padding: 8px 12px;
+  font-size: 15px;
+}
+
+.profile-card .user-data-list dt {
+  color: #60718d;
+}
+
+.profile-card .user-data-list dd {
+  color: var(--fc-ink);
+  font-size: 18px;
+}
+
+.profile-card #user-area-status {
+  color: #1a3b21;
+}
+
+.profile-card #user-area-status.error {
+  color: var(--fc-danger);
+}
+
+.favorite-team-page .favorite-team-head {
+  align-items: flex-start;
+}
+
+.favorite-team-page .favorite-team-head img {
+  width: 64px;
+  height: 64px;
+}
+
+#logout-btn {
+  margin-top: 8px;
+  width: 100%;
+  text-align: left;
+  background: #dce4ef;
+}
+
+.hero {
+  margin: 16px 0 22px;
+  border-radius: 0;
+  overflow: hidden;
+  background:
+    linear-gradient(130deg, rgba(13, 21, 37, 0.96), rgba(25, 42, 70, 0.92)),
+    url("logos/serie_a.png") no-repeat right 24px center / 90px;
+  color: #fff;
+}
+
+.hero-inner {
+  padding: 30px 28px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(22px, 3.3vw, 36px);
+}
+
+.hero p {
+  margin: 8px 0 0;
+  color: #d6def0;
+}
+
+.grid {
+  display: grid;
+  gap: 14px;
+}
+
+.grid.cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid.cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.card {
+  background: var(--fc-card);
+  border: 1px solid var(--fc-border);
+  border-radius: 0;
+  box-shadow: 0 8px 24px rgba(18, 25, 39, 0.08);
+}
+
+.card.pad {
+  padding: 18px;
+}
+
+.card.headline {
+  border-top: 4px solid var(--fc-green);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+.card.headline > img {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  display: block;
+  margin: 2px auto 10px;
+}
+
+.card.headline .btn {
+  margin-top: auto;
+}
+
+.card h2,
+.card h3 {
+  margin-top: 0;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 24px 0 14px;
+}
+
+.section-title img {
+  width: 26px;
+  height: 26px;
+}
+
+.btn {
+  border: 0;
+  border-radius: 59px;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-main {
+  background: var(--fc-green);
+  color: #fff;
+}
+
+.btn-main:hover {
+  background: var(--fc-green-dark);
+  color: #fff;
+}
+
+.btn-ghost {
+  background: #eef2f8;
+  color: #263246;
+}
+
+.btn-ghost:hover {
+  background: #dce4ef;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+input,
+select {
+  border: 1px solid var(--fc-border);
+  border-radius: 0;
+  padding: 10px 12px;
+  font-size: 15px;
+  background: #fff;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  background: #17253f;
+  color: #f4f8ff;
+  text-align: left;
+  font-size: 14px;
+  padding: 11px 10px;
+}
+
+tbody td {
+  border-bottom: 1px solid #e6ebf2;
+  padding: 10px;
+  font-size: 15px;
+}
+
+tbody tr:hover {
+  background: #f4f8ff;
+}
+
+.center {
+  text-align: center;
+}
+
+.muted {
+  color: var(--fc-muted);
+}
+
+.team {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.team img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.pos-badge {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+.status {
+  margin-top: 10px;
+  color: #1a3b21;
+  font-weight: 600;
+}
+
+.status.error {
+  color: var(--fc-danger);
+}
+
+.news-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.news-filter-controls {
+  justify-content: flex-start;
+}
+
+.news-card {
+  cursor: pointer;
+}
+
+.news-card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.news-card h4 {
+  margin: 10px 0 6px;
+}
+
+.stadium-info {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 14px;
+  align-items: center;
+}
+
+.stadium-info img {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 0;
+  border: 1px solid var(--fc-border);
+}
+
+.stadium-info h3 {
+  margin: 0 0 6px;
+}
+
+.footer {
+  margin: 26px 0 20px;
+  text-align: center;
+  color: #59647a;
+  font-size: 14px;
+}
+
+@media (max-width: 980px) {
+  .grid.cols-3,
+  .news-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .profile-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .grid.cols-3,
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stadium-info {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-inner {
+    padding: 20px;
+  }
+}

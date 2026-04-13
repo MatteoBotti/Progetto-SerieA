@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Serie A Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="navbar-slot"></div>
+
+  <main class="shell">
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>Portale Serie A 2024/2025 - 2025/2026</h1>
+        <p>Statistiche, classifica, calendario, notizie del campionato di Serie A</p>
+      </div>
+    </section>
+
+    <section class="grid cols-3">
+      <article class="card pad headline">
+        <img src="logos/classifica.png" alt="Classifica">
+        <h3>Classifica</h3>
+        <p class="muted">Classifica con punti, gol fatti/subiti e differenza reti.</p>
+        <a class="btn btn-main" href="classifica.html">Apri</a>
+      </article>
+      <article class="card pad headline">
+        <img src="logos/calendario.png" alt="Calendario">
+        <h3>Calendario</h3>
+        <p class="muted">Partite filtrate per giornata, squadra o stadio.
+        </p>
+        <a class="btn btn-main" href="partite_giornata.html">Apri</a>
+      </article>
+      <article class="card pad headline">
+        <img src="logos/statistiche.png" alt="Statistiche">
+        <h3>Giocatori</h3>
+        <p class="muted">Rosa completa per ogni squadra con ruolo e nazionalita.</p>
+        <a class="btn btn-main" href="giocatori_squadra.html">Apri</a>
+      </article>
+    </section>
+
+    <section class="section-title">
+      <img src="logos/notizie.png" alt="Notizie">
+      <h2>Ultime notizie</h2>
+    </section>
+    <section id="news-home" class="news-grid"></section>
+  </main>
+
+  <div class="footer">© 2026 Serie A Center</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="app.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>

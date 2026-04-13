@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Classifica Serie A</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="navbar-slot"></div>
+
+  <main class="shell">
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>Classifica Serie A</h1>
+      </div>
+    </section>
+
+    <section class="card pad">
+      <div class="controls">
+        <label for="anno">Anno inizio stagione</label>
+        <input id="anno" type="number" min="2000" max="2100" />
+        <button id="prev" class="btn btn-ghost">Precedente</button>
+        <button id="next" class="btn btn-ghost">Successiva</button>
+        <button id="show" class="btn btn-main">Mostra</button>
+      </div>
+      <p id="stagione-label" class="status"></p>
+    </section>
+
+    <section class="card">
+      <table>
+        <thead>
+          <tr>
+            <th>Pos</th>
+            <th>Squadra</th>
+            <th class="center">Punti</th>
+            <th class="center">GF</th>
+            <th class="center">GS</th>
+            <th class="center">DR</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="app.js"></script>
+  <script src="classifica.js"></script>
+</body>
+</html>

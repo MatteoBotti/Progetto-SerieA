@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Caricamento giocatori</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Caricamento giocatori</h1>
+    <p class="muted">Recupera i giocatori via football-data.org e li inserisce in tabella <b>CALCIATORE</b>.</p>
+
+    <section class="card">
+      <label for="teamId">Team ID</label>
+      <div class="row">
+        <input id="teamId" type="number" value="7397" min="1" />
+        <button id="btnCarica">Carica giocatori</button>
+      </div>
+      <div id="status" class="status"></div>
+    </section>
+
+    <section class="card">
+      <h2>Risultato</h2>
+      <pre id="output" class="output">{}</pre>
+    </section>
+  </main>
+
+  <script src="caricamento_giocatori.js"></script>
+</body>
+</html>

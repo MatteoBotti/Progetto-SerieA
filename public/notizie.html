@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notizie Serie A</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="navbar-slot"></div>
+  <main class="shell">
+    <section class="hero">
+      <div class="hero-inner">
+        <h1 id="news-title">Tutte le news</h1>
+      </div>
+    </section>
+    <section class="card pad">
+      <div class="controls news-filter-controls">
+        <button id="all-news-btn" class="btn btn-main" type="button">Tutte le news</button>
+        <button id="personal-news-btn" class="btn btn-ghost" type="button">Per te</button>
+      </div>
+    </section>
+    <section id="news-list" class="news-grid"></section>
+    <section class="card pad">
+      <div class="controls">
+        <button id="prev-page" class="btn btn-ghost">Precedente</button>
+        <span id="page-label" class="muted"></span>
+        <button id="next-page" class="btn btn-main">Successiva</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="app.js"></script>
+  <script src="notizie.js"></script>
+</body>
+</html>
